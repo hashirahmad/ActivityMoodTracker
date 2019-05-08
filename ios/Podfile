@@ -1,0 +1,40 @@
+target 'ActivityMoodtracker' do
+  
+    pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  
+    pod 'React', :path => '../node_modules/react-native', :subspecs => [
+      'DevSupport',
+      'RCTLinkingIOS',
+      'RCTImage'
+    ]
+    
+    # We'll add the react-native-sqlite-storage package during a later post here
+    pod 'react-native-sqlite-storage', :path => '../node_modules/react-native-sqlite-storage'
+    pod 'RNFS', :path => '../node_modules/react-native-fs'  
+    pod 'RCTRestart', :path => '../node_modules/react-native-restart/ios'
+    pod 'RNSVG', :path => '../node_modules/react-native-svg'
+
+    pod 'RNSnackbar', :path => '../node_modules/react-native-snackbar'
+
+
+    pod 'ReactNativeExceptionHandler', :path => '../node_modules/react-native-exception-handler'
+
+    pod 'react-native-orientation', :path => '../node_modules/react-native-orientation'
+
+  end
+  
+  post_install do |installer|
+    installer.pods_project.targets.each do |target|
+      # The following is needed to ensure the "archive" step works in XCode.
+      # It removes React & Yoga from the Pods project, as it is already included in the main project.
+      # Without this, you'd see errors when you archive like:
+      # "Multiple commands produce ... libReact.a"
+      # "Multiple commands produce ... libyoga.a"
+  
+      targets_to_ignore = %w(React yoga)
+      
+      if targets_to_ignore.include? target.name
+        target.remove_from_project
+      end
+    end
+  end
