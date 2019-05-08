@@ -35,6 +35,8 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+android/app/src/main/assets/timelogdb_nodata.db
+android/app/src/main/assets/timelogdb_data.db
 
 # BUCK
 buck-out/
