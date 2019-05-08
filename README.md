@@ -4,4 +4,4 @@
 ### THIS IS NOT PRODUCTION READY CODE, FINAL OPTIMIZATIONS ARE NECCESSARY
 
 
-[Link to the final android application](http://tiny.cc/ActivityMoodTracker)
+[Link to the final android application](https://drive.google.com/file/d/1zNlCIzAbvpCIPTKgeD9tikroSnkY-nqc/view?usp=sharing)
