@@ -165,7 +165,7 @@ export default class OneOffConfig extends React.Component {
                     visible={this.state.isLoading}
                     textContent={'Loading...'}
                     textStyle={{ color: invert(themes[themes.current].colors.background) }}
-                    color={progressColor}
+                    color={this.state.progressColor}
                     cancelable={true}
                     animation='fade'
                     size='large'
